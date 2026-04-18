@@ -1,0 +1,65 @@
+<!-- Full player -->
+<div class="reproductor-container" id="reproductor">
+  <div class="reproductor-placeholder">
+    <div class="reproductor-header">
+      <span class="reproductor-header-title">&#9835; Player</span>
+      <button class="btn-minimizar-simple" id="btn-min" title="Minimize">&#8722;</button>
+    </div>
+    <div class="visualizador-container">
+      <canvas id="visualizador" width="120" height="120"></canvas>
+    </div>
+    <div class="info-cancion">
+      <span id="titulo-cancion">No track loaded</span>
+      <p id="artista-cancion">&#8212;</p>
+    </div>
+    <div class="barra-progreso-container">
+      <div id="barra-progreso"><div id="progreso-actual"></div></div>
+      <div class="tiempo-container">
+        <span id="tiempo-actual">0:00</span>
+        <span id="tiempo-total">0:00</span>
+      </div>
+    </div>
+    <div class="controles-secundarios">
+      <button class="btn-control-secundario" id="btn-shuffle" title="Shuffle">&#9665;&#9666;</button>
+      <button class="btn-control-secundario" id="btn-repeat" title="Repeat">&#8635;</button>
+    </div>
+    <div class="controles-principales">
+      <button class="btn-control" id="btn-prev">&#9664;&#9664;</button>
+      <button class="btn-reproducir" id="btn-play">&#9654;</button>
+      <button class="btn-control" id="btn-next">&#9654;&#9654;</button>
+    </div>
+    <div class="volumen-container">
+      <button class="btn-volumen" id="btn-vol">&#128266;</button>
+      <div class="barra-volumen-container" id="vol-bar-container">
+        <div id="barra-volumen"><div id="nivel-volumen"></div></div>
+      </div>
+      <span style="font-size:0.72em;color:var(--text2);min-width:28px" id="vol-label">70%</span>
+    </div>
+    <div class="acciones-reproductor">
+      <label class="btn-accion" for="file-input">&#43; Add track</label>
+      <input type="file" id="file-input" accept="audio/*" multiple style="display:none">
+      <button class="btn-accion" id="btn-cola">&#9776; Queue</button>
+    </div>
+    <div class="cola-container" id="cola-container">
+      <ul class="cola-lista" id="cola-lista"></ul>
+    </div>
+    <div id="drop-zone" class="drop-zone">Drop audio files here</div>
+  </div>
+</div>
+
+<!-- Mini bar -->
+<div class="minibar" id="minibar">
+  <canvas class="mini-vis" id="mini-vis" width="28" height="28"></canvas>
+  <div class="mini-info">
+    <div class="mini-title" id="mini-title">No track</div>
+    <div class="mini-progress"><div class="mini-progress-fill" id="mini-fill"></div></div>
+  </div>
+  <div class="mini-controls">
+    <button class="mini-btn" id="mini-prev">&#9664;&#9664;</button>
+    <button class="mini-btn play-btn" id="mini-play">&#9654;</button>
+    <button class="mini-btn" id="mini-next">&#9654;&#9654;</button>
+  </div>
+  <button class="mini-toggle" id="btn-expand" title="Expand">&#43;</button>
+</div>
+
+<script>
